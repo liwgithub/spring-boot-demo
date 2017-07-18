@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baiding.boot.dao.CityDAO">
+    
+    <resultMap id="BaseCity" type="com.baiding.boot.model.City">
+        <result property="id" column="ID"/>
+        <result property="name" column="Name"/>
+        <result property="countryCode" column="CountryCode"/>
+        <result property="district" column="District"/>
+        <result property="population" column="Population"/>
+    </resultMap>
+    
+    <select id="selectCityById" resultMap="BaseCity">
+        select ID,Name,CountryCode,DistriCt,Population
+          FROM city
+          WHERE ID=#{id}
+    </select>
+    
+    <select id="selectCityByCountry" resultMap="BaseCity">
+        select ID,Name,CountryCode,DistriCt,Population
+          FROM city
+          WHERE CountryCode LIKE CONCAT('%',#{countryCode},'%')
+
+    </select>
+    
+</mapper>
