@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by BaiDing on 2017/7/13.
+ * 简单说来就是：@RestController = @Controller + @ResponseBody。
  */
 @RestController
 @RequestMapping("/account")

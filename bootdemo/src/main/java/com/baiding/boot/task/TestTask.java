@@ -10,6 +10,11 @@ import java.util.Date;
 
 /**
  * Created by BaiDing on 2017/7/16.
+ * @EnableScheduling 注解的作用是发现注解@Scheduled的任务并后台执行
+ * @Scheduled 注解用于标注这个方法是一个定时任务的方法，有多种配置可选。
+ * cron支持cron表达式，指定任务在特定时间执行；
+ * fixedRate以特定频率执行任务；
+ * fixedRateString以string的形式配置执行频率。
  */
 @Configuration
 @EnableScheduling

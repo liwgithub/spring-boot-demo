@@ -29,7 +29,7 @@
             <artifactId>HikariCP</artifactId>
             <version>2.5.1</version>
         </dependency>
-
+        <!-- spring boot web支持：mvc,aop,tomcat... -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -100,7 +100,14 @@
                     <fork>true</fork>
                 </configuration>
             </plugin>
-
+            <!-- 编译版本; -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
         </plugins>
 
     </build>
