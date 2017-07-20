@@ -11,6 +11,17 @@
         name="ENCODE_PATTERN"
         value="%d{yyyy-MM-dd HH:mm:ss.sss} %-5level [%thread] %c:%L:%n--->%msg%n"/>
     <!--
+           1.%d{yyyy-MM-dd HH:mm:ss.sss} ——日志输出时间
+            2.%-5level ——日志级别，并且使用5个字符靠左对齐
+            3.%thread ——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
+            4.%c ——输出日志所属的类
+            5.%L ——输出打印日志语句的行号
+            6.%msg ——日志消息
+            7.%n ——平台的换行符
+    -->
+
+
+    <!--
         appender用来格式化日志输出节点，
         有俩个属性name和class，class用来指定哪种输出策略，
         常用就是控制台输出策略和文件输出策略
@@ -26,15 +37,7 @@
             <level>ERROR</level>
         </filter>-->
 
-        <!--<encoder>表示对日志进行编码：
-            1.%d{yyyy-MM-dd HH:mm:ss.sss} ——日志输出时间
-            2.%-5level ——日志级别，并且使用5个字符靠左对齐
-            3.%thread ——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
-            4.%c ——输出日志所属的类
-            5.%L ——输出打印日志语句的行号
-            6.%msg ——日志消息
-            7.%n ——平台的换行符
-        -->
+        <!--<encoder>表示对日志进行编码-->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>${ENCODE_PATTERN}</Pattern>
         </encoder>
@@ -67,6 +70,7 @@
         日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出
     -->
     <!--
+        ....
         <root>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个loger
     -->
     <root level="info">
