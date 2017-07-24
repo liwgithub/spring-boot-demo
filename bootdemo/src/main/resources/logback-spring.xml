@@ -9,7 +9,7 @@
     -->
     <property
         name="ENCODE_PATTERN"
-        value="%d{yyyy-MM-dd HH:mm:ss.sss} %-5level [%thread] %c:%L:%n--->%msg%n"/>
+        value="%d{yyyy-MM-dd HH:mm:ss.sss} %-5level [%thread] %c:%L--->%msg%n"/>
     <!--
            1.%d{yyyy-MM-dd HH:mm:ss.sss} ——日志输出时间
             2.%-5level ——日志级别，并且使用5个字符靠左对齐
@@ -103,13 +103,13 @@
         只有在文件日志中才能得到info,warn,error级别的所有的日志
 
     -->
-    <logger name="com.baiding.boot.controller"/>
-    <logger name="org.springframework" level="error" additivity="false">
+    <logger name="com.baiding"/>
+   <!-- <logger name="org.springframework" level="error" additivity="false">
         <appender-ref ref="console"/>
     </logger>
     <logger name="org.apache" level="error" additivity="false">
         <appender-ref ref="console"/>
-    </logger>
+    </logger>-->
 
 
     <!--

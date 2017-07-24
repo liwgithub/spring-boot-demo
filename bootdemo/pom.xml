@@ -7,7 +7,7 @@
     <groupId>com.baiding.springboot.demo</groupId>
     <artifactId>boot-demo</artifactId>
     <version>1.0.0</version>
-
+    <packaging>war</packaging>
     <!--
         springBoot 父节点，引入之后相关的引入无需配置version，springBoot会选择最合适的版本自动添加
     -->
@@ -20,6 +20,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>
     </properties>
 
     <dependencies>
@@ -29,10 +31,31 @@
             <artifactId>HikariCP</artifactId>
             <version>2.5.1</version>
         </dependency>
+
+        <!--redis支持-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
         <!-- spring boot web支持：mvc,aop,tomcat... -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
         <dependency>

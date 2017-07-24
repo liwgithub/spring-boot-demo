@@ -45,4 +45,10 @@ public class TemplateController {
         model.addObject("user",userProperty.getName());
         return model;
     }
+
+    @RequestMapping("/version")
+    public String thymeleafVersion(){
+        logger.info("访问了{}接口，现在时间为{}","/temp/version",new Date());
+        return "/test";
+    }
 }

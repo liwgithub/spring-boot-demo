@@ -26,9 +26,10 @@ public class HelloController {
     public User queryUser(){
 
         User user=new User();
-        user.setAge(11);
-        user.setName("张三");
+        user.setUserName("张三");
+        user.setUserPassword("zhangsan");
 
         return user;
     }
+
 }

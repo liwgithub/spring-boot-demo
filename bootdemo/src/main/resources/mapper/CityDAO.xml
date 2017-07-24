@@ -22,7 +22,54 @@
         select ID,Name,CountryCode,DistriCt,Population
           FROM city
           WHERE CountryCode LIKE CONCAT('%',#{countryCode},'%')
-
     </select>
-    
+
+    <select id="findAllCIty" resultMap="BaseCity">
+        select ID,Name,CountryCode,DistriCt,Population
+           FROM city
+    </select>
+
+    <insert id="saveCity" parameterType="com.baiding.boot.model.City">
+        INSERT INTO city
+        (
+          ID,
+          Name,
+          CountryCode,
+          DistriCt,
+          Population
+        )VALUES (
+          #{id},
+          #{name},
+          #{countryCode},
+          #{distriCt},
+          #{population}
+        )
+    </insert>
+
+    <update id="updateCity" parameterType="com.baiding.boot.model.City">
+        update
+        city
+        set
+        <if test="name!=null">
+            Name = #{name},
+        </if>
+        <if test="countryCode!=null">
+            CountryCode = #{countryCode},
+        </if>
+        <if test="distriCt!=null">
+            DistriCt = #{distriCt}
+        </if>
+        <if test="population !=null">
+            Population= #{population}
+        </if>
+        where
+        ID = #{id}
+    </update>
+
+    <delete id="deleteCity" parameterType="java.lang.Integer">
+        delete from
+        city
+        where
+        ID = #{id}
+    </delete>
 </mapper>

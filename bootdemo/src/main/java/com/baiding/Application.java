@@ -3,7 +3,10 @@ package com.baiding;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * Created by BaiDing on 2017/7/13.
@@ -16,9 +19,21 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"cn.baiding","com.baiding"})
 @MapperScan("com.baiding.boot.dao")
-public class Application {
+@EnableAsync
+public class Application{
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
     }
-
 }
+
+// 下述 代码作为将工程打包成war包部署在本地tomcat所用
+//public class Application extends SpringBootServletInitializer{
+//    public static void main(String[] args) {
+//        SpringApplication.run(Application.class,args);
+//    }
+//
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//        return builder.sources(this.getClass());
+//    }
+//}

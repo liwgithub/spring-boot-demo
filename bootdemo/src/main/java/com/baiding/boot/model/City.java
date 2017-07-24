@@ -1,9 +1,11 @@
 package com.baiding.boot.model;
 
+import java.io.Serializable;
+
 /**
  * Created by BaiDing on 2017/7/16.
  */
-public class City {
+public class City implements Serializable {
 
     private Integer id;
     private String name;
@@ -49,5 +51,16 @@ public class City {
 
     public void setPopulation(Integer population) {
         this.population = population;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", district='" + district + '\'' +
+                ", population=" + population +
+                '}';
     }
 }
